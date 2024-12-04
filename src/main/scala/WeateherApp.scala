@@ -21,7 +21,7 @@ object WeatherApp extends App{
 
 //parse data
   def parseWeatherData(json: String): (String, Double, Double, String, Double, Double, Double, Double, Double, Double,Double, String, String) = {
-    implicit val formats: Formats = DefaultFormats  // Dodato: koristimo DefaultFormats za automatsko mapiranje
+    implicit val formats: Formats = DefaultFormats  
 
     val parsedJson = parse(json)
     val city = (parsedJson \ "name").extract[String]
